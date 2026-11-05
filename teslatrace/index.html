@@ -17,7 +17,7 @@
     <p class="eyebrow">Legal information</p>
     <h1>TeslaTrace</h1>
     <p class="subtitle">Privacy Policy &amp; Terms and Conditions</p>
-    <p class="meta">Last updated: <strong>17 October 2026</strong><br>Developer: <strong>Fraian — Individual Developer</strong><br>Country: <strong>Italy</strong></p>
+    <p class="meta">Last updated: <strong>5 November 2026</strong><br>Developer: <strong>Fraian — Individual Developer</strong><br>Country: <strong>Italy</strong></p>
     <nav aria-label="Document sections"><a href="#privacy">Privacy Policy</a><a href="#terms">Terms and Conditions</a><a href="#contact">Contact</a></nav>
   </header>
   <main>
@@ -37,27 +37,67 @@
       </ul>
       <p>App data is stored locally on your device. As with any app, you should protect access to your device and keep it updated.</p>
       <h3>3. Sensors, permissions and technical processing</h3>
-      <p>The App uses the device's magnetic-field sensor to read magnetic-field changes. It does not require camera, microphone, contacts or precise-location permissions for its scanning features. Vibration may be used to provide haptic feedback. Internet access is used by third-party services for advertising, privacy choices, fonts and purchase processing. Scanning and report creation take place on your device.</p>
-      <p>PDF reports are generated on the device. When you choose to share a report or text summary, Android passes the selected content to the application or destination you choose, such as an email or messaging app. The receiving app's own privacy practices then apply.</p>
-      <h3>4. Google AdMob advertising and consent</h3>
-      <p>The Free version and the introductory trial display advertising. Integrated formats include adaptive banner ads, native ads, interstitial ads and rewarded video ads. Paid Pro access through a qualifying monthly subscription or Lifetime purchase removes advertisements as described in the current purchase screen.</p>
-      <p>Google Mobile Ads and its advertising partners may process information such as the advertising identifier, IP address, device or app identifiers, diagnostic and network information, ad impressions and interactions, and information used to deliver, limit, measure or personalise advertising. Depending on the configuration and applicable law, approximate location may be inferred from the IP address. The Developer does not operate an advertising server and does not independently collect this advertising data through a proprietary backend.</p>
-      <p>The App uses Google’s consent tool to present and manage advertising privacy choices where required. You can reopen the available choices using the “Privacy &amp; Cookie AdMob” option in Settings. The options shown depend on your location and applicable requirements. See Google's <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Privacy Policy</a> and <a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">advertising technologies information</a>.</p>
-      <h3>5. Google Play Billing and paid features</h3>
-      <p>The App offers optional paid Pro access through Google Play Billing: a monthly subscription and a one-time Lifetime purchase. Google Play processes the payment transaction. The Developer does not receive or store your full payment-card details through the App. Google may process purchase tokens, product identifiers, transaction information, subscription status and associated Google Play account information under Google's own terms and privacy notices.</p>
+      <p>The App requests and utilizes system permissions strictly necessary for its technical operation:</p>
+      <ul>
+        <li><strong>Magnetic-Field Sensor:</strong> Processed directly in device memory to analyze magnetic variations and estimate cable or metal presence without uploading sensor telemetry to external servers;</li>
+        <li><strong>Vibration (`android.permission.VIBRATE`):</strong> Used optionally to provide tactile haptic feedback when detecting threshold magnetic spikes;</li>
+        <li><strong>Internet &amp; Network State (`android.permission.INTERNET`, `android.permission.ACCESS_NETWORK_STATE`):</strong> Required for Google AdMob ad delivery, UMP consent verification, downloadable fonts, and Google Play licensing validation;</li>
+        <li><strong>Advertising ID (`com.google.android.gms.permission.AD_ID`):</strong> Merged automatically by Google Mobile Ads SDK dependencies to allow compliant ad serving, frequency capping, and fraud detection on Android 13+ devices.</li>
+      </ul>
+      <p>The App does not require camera, microphone, device contacts, or GPS location permissions for its scanning features.</p>
+      <p>PDF reports are generated directly on the device. When you choose to share a report or text summary, Android passes the selected file or text to the application or destination you choose (e.g., email or messaging app). The receiving service's own terms and privacy practices then apply.</p>
+      
+      <h3>4. Google AdMob Advertising, Identifiers, and Consent Choices</h3>
+      <p>The Free version and introductory trial of TeslaTrace display third-party advertisements delivered via Google AdMob (Google Ireland Limited / Google LLC). Integrated formats include adaptive banner ads, native ads, interstitial ads, and optional rewarded video ads used to unlock certain exports. Paid Pro access (monthly subscription or Lifetime purchase) removes advertisements within the App.</p>
+      <p>When loading and displaying advertisements, Google AdMob and its advertising partners may automatically collect and process certain device and usage data. Depending on your region, operating system version, and consent choices, this data may include:</p>
+      <ul>
+        <li><strong>Advertising Identifiers:</strong> The Google Advertising ID (GAID / AD_ID) provided by Google Play Services;</li>
+        <li><strong>Network &amp; Device Information:</strong> Approximate location inferred from coarse IP address, mobile network state, hardware model, operating system version, screen resolution, and system language;</li>
+        <li><strong>Diagnostic &amp; Performance Data:</strong> Ad delivery performance, interaction metrics, click data, and crash/diagnostic logs.</li>
+      </ul>
+
+      <p><strong>Purposes of Advertising Data Processing:</strong></p>
+      <ul>
+        <li><strong>Delivery &amp; Serving:</strong> Technical rendering and loading of ad creative assets on your device screen;</li>
+        <li><strong>Frequency Capping:</strong> Limiting repetitive display of identical ads to maintain user experience;</li>
+        <li><strong>Performance Measurement:</strong> Auditing and reporting ad impressions, engagement, and conversion metrics;</li>
+        <li><strong>Fraud Prevention &amp; Security:</strong> Detecting bot activity, invalid clicks, and abusive or fraudulent traffic patterns;</li>
+        <li><strong>Personalization:</strong> Serving ads tailored to inferred user interests, <em>only</em> where permitted by applicable regulations and when valid affirmative consent has been granted by the user.</li>
+      </ul>
+
+      <p><strong>User Control Over Advertising Identifiers:</strong><br>
+      You can control, reset, or delete your Android Advertising ID at any time via your device settings (typically located under <em>Settings &gt; Google &gt; Ads</em> or <em>Settings &gt; Privacy &gt; Ads</em>, depending on your device manufacturer and Android version). Deleting or resetting the identifier will disassociate future advertising requests from previous ad tracking profiles.</p>
+
+      <p><strong>Google User Messaging Platform (UMP) &amp; Consent Management:</strong><br>
+      The App incorporates the Google User Messaging Platform (UMP) SDK as a standard component of its release configuration to facilitate consent gathering and regulatory compliance across the European Economic Area (EEA), the United Kingdom, and Switzerland under the GDPR and ePrivacy frameworks. Where applicable, the App presents a consent dialog enabling you to accept, reject, or customize ad personalization and vendor permissions. You can review and modify your choices at any time via the “Privacy &amp; Cookie AdMob” option located within the App's Settings.</p>
+
+      <p>For detailed information on how Google processes personal data through its advertising SDKs, please consult:</p>
+      <ul>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+        <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from sites or apps that use our services</a></li>
+        <li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google Advertising Technologies &amp; Policies</a></li>
+      </ul>
+
+      <h3>5. In-App Purchases, Subscriptions, and Google Play Billing</h3>
+      <p>The App offers optional paid Pro access through Google Play Billing: a monthly auto-renewing subscription and a one-time Lifetime purchase.</p>
+      <p><strong>Google Play Billing Processing:</strong> All in-app purchase transactions, payments, subscriptions, cancellations, and renewals are handled exclusively by Google Play under its own terms and policies. The Developer does not receive, process, or store your credit card numbers, bank account numbers, or billing addresses. We receive only an anonymized transaction identifier and entitlement confirmation token from Google Play to unlock Pro features on your device. For more information, consult <a href="https://payments.google.com/legaldocument?family=privacy_notice" target="_blank" rel="noopener noreferrer">Google Payments’ Privacy Notice</a>, <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s Privacy Policy</a>, and the <a href="https://support.google.com/googleplay/answer/7018481" target="_blank" rel="noopener noreferrer">Google Play Subscription Management Guide</a>.</p>
       <p>Pro features may include removal of advertising, removal of the “Powered by TeslaTrace” PDF watermark, a custom company/report header, encrypted manual backup and restore, unlimited saved scans, and PDF exports without the Free rewarded-ad requirement. The precise features included are those shown in the App's current paywall and purchase flow.</p>
       <p>Google Play manages the purchase transaction, subscription renewal and cancellation mechanisms, and applicable refund process. Review the product details and conditions displayed by Google Play before purchasing. A monthly subscription and a Lifetime purchase are different products; Lifetime is a one-time purchase and is not a recurring subscription.</p>
+
       <h3>6. Introductory seven-day trial</h3>
       <p>The App includes an introductory trial lasting seven days from the first launch. The trial is managed on your device and is separate from any offer available through Google Play.</p>
       <p>The local trial does not enrol you in a subscription, does not place an order and does not automatically charge you when it ends. If you want Pro after the trial, you must actively choose and complete a paid purchase through the purchase flow. Advertising remains enabled during the trial. During the trial, saving scans is not subject to the Free lifetime scan limit; however, paid-only features such as encrypted backup/restore, custom company profile and removal of the PDF watermark remain locked unless you purchase Pro. The App may display the existing Pro paywall when you select a locked feature.</p>
       <p>When the trial expires without a paid entitlement, the App returns to the Free feature set. The Free plan's limit on new saved scans applies again. Previously saved measurements are not automatically deleted when the trial ends.</p>
+
       <h3>7. Third-party services and external recipients</h3>
-      <p>The App uses Google services for advertising, advertising privacy choices, fonts and purchase processing. It has no Developer-operated online account or server, and the Developer does not receive your saved measurements or company-profile details through the App.</p>
+      <p>The App uses Google services for advertising, advertising privacy choices, fonts and purchase processing. It has no Developer-operated online account or server, and the Developer does not receive your saved measurements or company-profile details through the App. The App configuration does not include Firebase Analytics, Crashlytics, or developer-operated remote telemetry servers.</p>
       <p>Third-party providers process information under their own privacy notices and terms. Their services and the information they process may change when the App or its SDKs are updated.</p>
+
       <h3>8. Android backup, device transfer and manual encrypted backups</h3>
       <p>Android system backup and device-transfer rules may include the App's measurement database and selected company-profile and international-preference files. The local billing/trial preferences and temporary backup-staging directory are excluded from the configured Android automatic backup rules. Actual backup and transfer behavior depends on Android version, device settings and the Google backup service.</p>
       <p>Android may back up some App data or transfer it to another device, depending on your device and backup settings. Separately, the App offers an optional password-protected manual backup in a <code>.ttbak</code> file. You choose where to save the file. The App does not send it to the Developer. If you save it using a cloud-storage service, that service's own terms and privacy settings apply.</p>
       <p>The Developer cannot recover a forgotten backup password, so keep it safe. Delete backup files from the place where you saved them when you no longer need them. PDF reports and shared text may contain readings, labels, timestamps, technical references and any company details you have chosen to include.</p>
+
       <h3>9. Retention and deletion</h3>
       <ul>
         <li><strong>Saved scans:</strong> open the App's History screen and use the available delete action for an individual record.</li>
@@ -67,13 +107,20 @@
         <li><strong>Exported reports and backups:</strong> delete PDF or <code>.ttbak</code> files separately from the destination where you saved them.</li>
       </ul>
       <p>Deleting information inside the App does not necessarily delete files already exported, copies shared with other apps, or eligible copies in Android system backups. Information processed by Google for advertising or purchases must be managed through the relevant Google privacy, account or device controls where available.</p>
+
       <h3>10. Security</h3>
       <p>The App stores its primary measurement and preference data locally and uses authenticated encryption for manually exported <code>.ttbak</code> backups. No software, device storage, encryption or transmission method can be guaranteed completely secure. Protect access to your device and keep backup passwords confidential. The Developer cannot remotely erase data stored only on your device.</p>
-      <h3>11. Privacy rights and choices</h3>
-      <p>Depending on your location and applicable law, you may have rights to request access to, correction of or deletion of personal information, to object to or restrict certain processing, to receive portable data, to withdraw consent where processing relies on consent, or to complain to a competent data-protection authority. Contact <a href="mailto:fraian_dev@protonmail.com">fraian_dev@protonmail.com</a> for requests concerning processing for which the Developer is responsible.</p>
-      <p>Because the Developer does not receive locally stored scans and company details through a proprietary backend, the Developer generally cannot retrieve or directly delete those local records for you. Google processes advertising and purchase information through its own systems and in accordance with its own privacy notices and legal responsibilities.</p>
+
+      <h3>11. Privacy rights and choices (GDPR / CCPA)</h3>
+      <p>Depending on your location and applicable law, you hold rights regarding personal information processed by a service provider:</p>
+      <ul>
+        <li><strong>Local Application Records:</strong> You have autonomous, direct control over all locally stored scans, notes, and company profiles, which you can modify, export, or erase at any time via App controls or Android application settings.</li>
+        <li><strong>Third-Party Ad &amp; Billing Data:</strong> For personal data processed independently by Google (such as Advertising IDs and network telemetry), consult Google's official privacy tools and settings to exercise your rights of access, correction, or deletion. You can revise consent anytime using the “Privacy &amp; Cookie AdMob” settings form.</li>
+      </ul>
+
       <h3>12. Intended audience</h3>
       <p>TeslaTrace is a general-purpose technical utility intended for adults and the general public. It is not designed specifically for children. The App's intended audience and advertising configuration should be consistent with its applicable store declarations.</p>
+
       <h3>13. International availability and changes</h3>
       <p>The App may be distributed internationally through supported distribution channels. It includes language options for English, Italian, German, French and Spanish and country-specific technical references where available. A language or country selection does not guarantee that every local law, wiring configuration, building material or technical standard is covered. This Policy may be updated to reflect changes in the App, its services or applicable requirements. The latest revision date appears at the top of this document.</p>
     </section>
@@ -95,10 +142,14 @@
       <p>The App offers a Free version supported by advertising and a local seven-day introductory trial. The trial begins from first launch, is calculated on the device and is separate from any Google Play subscription offer. It does not create a subscription or automatically charge you when it expires.</p>
       <p>During the trial, saving scans is unlimited, but advertisements remain active and paid-only features remain locked, including encrypted backup/restore, the custom company profile and removal of the “Powered by TeslaTrace” watermark. When the trial expires, the App returns to the Free feature set. The Free plan limits the number of new saved scans to five over the lifetime of the local app installation/accounting state. Previously saved scans are not automatically deleted when the trial ends. Free PDF export may require a rewarded advertisement and is subject to the limits displayed in the App.</p>
       <p>Trial state and Free counters are stored locally. Clearing app data, reinstalling the App, changing the device clock or other device-level actions may affect local state; the App may apply checks to detect clock changes. The Developer does not guarantee that locally stored trial state will persist through every reset, restore or device migration.</p>
-      <h3>5. Pro purchases, subscriptions and cancellation</h3>
-      <p>Optional Pro access is offered through Google Play as a monthly subscription or a one-time Lifetime purchase. The monthly subscription renews according to the terms shown in Google Play unless cancelled through the applicable Google Play subscription controls. The Lifetime product is a one-time purchase and does not renew. Prices, taxes, billing period, renewal terms and available purchase options are those displayed in the Google Play purchase flow at the time of purchase; prices may vary by country and currency.</p>
-      <p>Paid Pro may remove advertising and unlock features such as unlimited saved scans, PDF exports without rewarded-ad requirements, encrypted backup/restore, custom company/report headers and removal of the PDF watermark. The exact entitlements are those described in the current App paywall. A local introductory trial does not automatically convert to a paid product. You must choose and confirm a purchase separately.</p>
-      <p>Google Play handles payments, subscription management and refund requests under its applicable policies. You are responsible for reviewing the product details before purchase and managing any subscription through the Google Play account used to buy it.</p>
+      
+      <h3>5. Pro Purchases, Subscriptions, and Billing</h3>
+      <p>Optional Pro access is offered through Google Play as a monthly auto-renewing subscription or a one-time Lifetime purchase.</p>
+      <p><strong>Official Pricing &amp; Terms:</strong> The official purchase price, currency, applicable taxes, and subscription terms are presented solely and governed by Google Play on the checkout confirmation screen prior to payment confirmation.</p>
+      <p><strong>Subscription Management:</strong> Monthly subscriptions renew automatically unless cancelled by the user according to Google Play’s subscription rules. You are responsible for managing or cancelling a subscription directly through the Google Play Store (under <em>Payments &amp; subscriptions</em>) prior to the next renewal billing date if you do not wish it to renew. If you purchase a Lifetime license while having an active monthly subscription, you must cancel the monthly subscription manually in Google Play to avoid continued recurring charges.</p>
+      <p>Google Play manages all transactions, payments, cancellations, and refunds under the <a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener noreferrer">Google Play Terms of Service</a>. We do not process refunds directly. Restoring purchases or verifying entitlement requires the Google Play account utilized at checkout.</p>
+      <p>Paid Pro removes advertising and unlocks features such as unlimited saved scans, PDF exports without rewarded-ad requirements, encrypted backup/restore, custom company/report headers and removal of the PDF watermark. The exact entitlements are those described in the current App paywall.</p>
+
       <h3>6. Saved data, reports and backups</h3>
       <p>Saved measurements and company-profile details are stored locally. You are responsible for labels, company details and other information you enter, including ensuring that you are authorised to include it in reports. PDF reports and shared text are generated from the information available in the App and may be incomplete or inaccurate if the underlying readings or user-entered information are inaccurate.</p>
       <p>Manual <code>.ttbak</code> backups are encrypted with a password you choose. The Developer cannot recover a lost password and does not guarantee that every backup or restore will succeed on every device or future App version. Keep independent copies of important data and store backup files and passwords securely. Exported files are under your control once saved or shared.</p>
